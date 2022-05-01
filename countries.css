@@ -1,0 +1,20 @@
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#country-container {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    margin: 40px 0;
+}
+
+.country-card {
+    width: 500px;
+    text-align:center;
+    overflow:auto;
+    border: 2px solid black;
+}
