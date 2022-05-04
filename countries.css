@@ -2,6 +2,8 @@ html,
 body {
     margin: 0;
     padding: 0;
+    text-align: center;
+    background-color: lightslategrey;
 }
 
 #country-container {
@@ -17,4 +19,28 @@ body {
     text-align:center;
     overflow:auto;
     border: 2px solid black;
+}
+
+.text-container>#no1 {
+    color: white;
+}
+
+.text-container>#no2{
+    color:rgb(231, 202, 140) ;   
+}
+
+.text-container>#no3 {
+    color:rgb(151, 184, 226) ;
+}
+
+.text-container>#no4 {
+    color: rgb(107, 230, 134);
+}
+
+.text-container>#no5 {
+    color: rgb(231, 168, 226);
+}
+
+.text-container>#no6 {
+    color: yellow;
 }

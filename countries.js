@@ -54,7 +54,9 @@ function showCountries(countryArray) {
             else if (countryArray[i].region == "Americas") {
                 div.style.backgroundColor = "rgb(231, 202, 140)"}
             else if (countryArray[i].region == "Antarctic") {
-                div.style.backgroundColor = "yellow"
+                div.style.backgroundColor = "yellow" }
+            else if(countryArray[i].region == "Europe") {
+                div.style.backgroundColor = "white"
             }
             
             
