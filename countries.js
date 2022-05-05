@@ -1,17 +1,33 @@
 let countryArray = [];
 
 async function getCountries(url) {
-    let countries = await fetch(url);
-    let jsonDAta = await countries.json();
-    jsonDAta.forEach(element => {
-        countryArray.push(element)});
+    try {
+        let countries = await fetch(url);
+        let jsonDAta = await countries.json();
+        jsonDAta.forEach(element => {
+            countryArray.push(element)});
+    } catch (error) {
+        console.error(error);
+    }
 
     showCountries(countryArray);
 }
 
+let countryList = document.getElementById("country-list");
+let searchBar = document.getElementById("search-bar");
 
-
-console.log(countryArray);
+searchBar.addEventListener("keyup", function (e) {
+    let searchString = e.target.value.toLowerCase();
+    let filteredCharacters = countryArray.filter(function (country) {
+        return (
+            country.name.toLowerCase().includes(searchString)
+        );
+    });
+    showCountries(filteredCharacters);
+    if (searchBar.value === "") {
+        countryList.innerHTML = "";
+    }
+});	
     
 function showCountries(countryArray) {
     let countryContainer = document.getElementById("country-container");
@@ -22,7 +38,6 @@ function showCountries(countryArray) {
 
         let countryName = document.createElement("h1");
         countryName.innerText = `LAND ${i}: ${countryArray[i].name.common}`
-        console.log(countryName);
 
         let countryCapital = document.createElement("h3");
         countryCapital.innerText = `Hovedstad: ${countryArray[i].capital}`;
