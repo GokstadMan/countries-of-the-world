@@ -13,6 +13,7 @@ async function getCountries(url) {
     showCountries(countryArray);
 }
 
+
 let countryList = document.getElementById("country-list");
 let searchBar = document.getElementById("search-bar");
 
@@ -20,7 +21,7 @@ searchBar.addEventListener("keyup", function (e) {
     let searchString = e.target.value.toLowerCase();
     let filteredCharacters = countryArray.filter(function (country) {
         return (
-            country.name.toLowerCase().includes(searchString)
+            country.name.common.toLowerCase().includes(searchString)
         );
     });
     showCountries(filteredCharacters);
